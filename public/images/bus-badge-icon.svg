@@ -1,0 +1,117 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-labelledby="title desc">
+  <title id="title">Bus Badge Icon</title>
+  <desc id="desc">Rounded yellow badge with a stylized front-view bus, glass reflections, grill, and glowing headlights.</desc>
+
+  <!-- THEME VARIABLES -->
+  <style>
+    :root{
+      --badge1:#FFD54D;   /* light yellow */
+      --badge2:#FFC107;   /* deeper yellow */
+      --stroke:#111;      /* outline color */
+      --bus:#0B0B0B;      /* bus body */
+      --glass1:#FFFFFF;   /* glass top */
+      --glass2:#CFE8FF;   /* glass bottom */
+      --accent:#FF7043;   /* turn signals */
+      --tyre:#1C1C1C;     /* tyres */
+      --rim:#9E9E9E;      /* wheel rims */
+    }
+  </style>
+
+  <!-- EFFECTS -->
+  <defs>
+    <!-- Soft inner shadow for the badge -->
+    <filter id="badgeShadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feOffset dy="1" />
+      <feGaussianBlur stdDeviation="1.2"/>
+      <feComposite operator="out" in2="SourceGraphic"/>
+      <feColorMatrix type="matrix" values="
+        0 0 0 0 0
+        0 0 0 0 0
+        0 0 0 0 0
+        0 0 0 .35 0"/>
+      <feBlend in="SourceGraphic" mode="normal"/>
+    </filter>
+
+    <!-- Headlight glow -->
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="2.2" result="b"/>
+      <feMerge>
+        <feMergeNode in="b"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Subtle drop shadow for bus -->
+    <filter id="dropSmall" x="-40%" y="-40%" width="180%" height="180%">
+      <feOffset dy="1.2" />
+      <feGaussianBlur stdDeviation="1.2" />
+      <feColorMatrix type="matrix" values="
+        0 0 0 0 0
+        0 0 0 0 0
+        0 0 0 0 0
+        0 0 0 .25 0"/>
+      <feBlend in="SourceGraphic" mode="normal"/>
+    </filter>
+
+    <!-- Badge gradient -->
+    <radialGradient id="gBadge" cx="35%" cy="30%" r="70%">
+      <stop offset="0%"  stop-color="var(--badge1)"/>
+      <stop offset="100%" stop-color="var(--badge2)"/>
+    </radialGradient>
+
+    <!-- Glass gradient -->
+    <linearGradient id="gGlass" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%"  stop-color="var(--glass1)"/>
+      <stop offset="100%" stop-color="var(--glass2)"/>
+    </linearGradient>
+  </defs>
+
+  <!-- BADGE -->
+  <circle cx="64" cy="64" r="58" fill="url(#gBadge)" stroke="var(--stroke)" stroke-width="2.5" filter="url(#badgeShadow)"/>
+
+  <!-- BUS GROUP -->
+  <g filter="url(#dropSmall)">
+    <!-- Bus body -->
+    <rect x="36" y="30" width="56" height="56" rx="7" ry="7" fill="var(--bus)" stroke="var(--stroke)" stroke-width="1.5"/>
+
+    <!-- Top marker lights -->
+    <circle cx="48" cy="34" r="2" fill="var(--accent)"/>
+    <circle cx="64" cy="34" r="2" fill="var(--accent)"/>
+    <circle cx="80" cy="34" r="2" fill="var(--accent)"/>
+
+    <!-- Windshield -->
+    <rect x="42" y="36" width="44" height="18" rx="3" fill="url(#gGlass)"/>
+    <!-- Windshield reflection -->
+    <path d="M44 38 Q66 34 86 40 L86 42 Q66 38 44 42 Z" fill="#ffffff" opacity=".25"/>
+
+    <!-- Grill -->
+    <rect x="46" y="60" width="36" height="6" rx="2" fill="#2c2c2c"/>
+    <rect x="48" y="61" width="32" height="1.5" fill="#555" opacity=".9"/>
+    <rect x="48" y="63.5" width="32" height="1.5" fill="#555" opacity=".9"/>
+
+    <!-- Indicators -->
+    <rect x="40" y="60" width="5" height="6" rx="1" fill="var(--accent)"/>
+    <rect x="83" y="60" width="5" height="6" rx="1" fill="var(--accent)"/>
+
+    <!-- Headlights -->
+    <g filter="url(#glow)">
+      <circle cx="48" cy="74" r="5" fill="#FFF"/>
+      <circle cx="80" cy="74" r="5" fill="#FFF"/>
+    </g>
+
+    <!-- Bumper -->
+    <rect x="40" y="80" width="48" height="6" rx="3" fill="#1a1a1a" stroke="#000" stroke-width=".6"/>
+
+    <!-- Wheels -->
+    <g>
+      <circle cx="50" cy="88" r="6.6" fill="var(--tyre)"/>
+      <circle cx="50" cy="88" r="3.2" fill="var(--rim)"/>
+      <circle cx="82" cy="88" r="6.6" fill="var(--tyre)"/>
+      <circle cx="82" cy="88" r="3.2" fill="var(--rim)"/>
+    </g>
+
+    <!-- Side mirrors -->
+    <rect x="33" y="44" width="4" height="10" rx="1" fill="var(--bus)"/>
+    <rect x="91" y="44" width="4" height="10" rx="1" fill="var(--bus)"/>
+  </g>
+</svg>
