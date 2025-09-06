@@ -27,25 +27,25 @@ const ContactPage: React.FC = () => {
         {
             icon: <Phone fontSize="large" />,
             title: 'טלפון',
-            primary: '08-6566234',
+            primary: '08-6555678',
             secondary: 'זמין 24/7',
-            action: 'tel:+972-8-6566234',
+            action: 'tel:088-6555678',
             color: 'primary' as const,
         },
         {
             icon: <WhatsApp fontSize="large" />,
             title: 'וואטסאפ',
-            primary: '050-6566234',
+            primary: '0545927803',
             secondary: 'הזמנות ושאלות',
-            action: 'https://wa.me/972506566234',
+            action: 'https://wa.me/0545927803',
             color: 'success' as const,
         },
         {
             icon: <Email fontSize="large" />,
             title: 'אימייל',
-            primary: 'info@dimona-transport.co.il',
+            primary: 'mdimona2018@gmail.com',
             secondary: 'מענה תוך 24 שעות',
-            action: 'mailto:info@dimona-transport.co.il',
+            action: 'mailto:mdimona2018@gmail.com',
             color: 'info' as const,
         },
     ];
@@ -54,12 +54,12 @@ const ContactPage: React.FC = () => {
         {
             icon: <Facebook />,
             name: 'פייסבוק',
-            url: 'https://facebook.com/dimona-transport',
+            url: 'https://www.facebook.com/profile.php?id=100064048477696&locale=ru_RU',
         },
         {
             icon: <Instagram />,
             name: 'אינסטגרם',
-            url: 'https://instagram.com/dimona_transport',
+            url: 'https://www.facebook.com/profile.php?id=100064048477696&locale=ru_RU',
         },
     ];
 

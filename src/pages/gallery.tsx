@@ -44,6 +44,41 @@ const galleryImages = [
         description: 'אייקון מצב תחבורה ציבורית',
         category: 'אייקונים'
     },
+    {
+        id: 5,
+        src: '/images/1.avif',
+        title: 'רכב הסעות מודרני',
+        description: 'רכב נוח ובטוח לשירותי הסעות איכותיים',
+        category: 'רכבים'
+    },
+    {
+        id: 6,
+        src: '/images/4.avif',
+        title: 'מיניבוס תחבורה',
+        description: 'פתרון תחבורה אידיאלי לקבוצות קטנות',
+        category: 'רכבים'
+    },
+    {
+        id: 7,
+        src: '/images/3.avif',
+        title: 'אוטובוס מפואר',
+        description: 'שירות הסעות איכותי עם נוחות מקסימלית',
+        category: 'רכבים'
+    },
+    {
+        id: 8,
+        src: '/images/2.avif',
+        title: 'ציי רכבים מקצועי',
+        description: 'מגוון רחב של רכבים לכל צורך תחבורתי',
+        category: 'ציוד'
+    },
+    {
+        id: 9,
+        src: '/images/5.avif',
+        title: 'שירות הסעות אמין',
+        description: 'מחויבות למצוינות ולשירות ללא פשרות',
+        category: 'שירותים'
+    },
 ];
 
 const GalleryPage: React.FC = () => {
@@ -69,7 +104,7 @@ const GalleryPage: React.FC = () => {
                     color="text.secondary"
                     sx={{ maxWidth: 600, mx: 'auto' }}
                 >
-                    צפו בתמונות ובתמונות של השירותים שלנו ושל הציוד המקצועי
+                    צפו בתמונות של השירותים שלנו ושל הציוד המקצועי
                 </Typography>
             </Box>
 

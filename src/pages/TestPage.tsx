@@ -24,25 +24,61 @@ const TestPage: React.FC = () => {
             </Box>
 
             <Box sx={{ display: 'flex', gap: 2, justifyContent: 'center', mb: 4, flexWrap: 'wrap' }}>
-                <Card sx={{ minWidth: 200 }}>
-                    <CardContent sx={{ textAlign: 'center' }}>
+                <Button
+                    component="a"
+                    href="tel:08-6555678"
+                    sx={{
+                        minWidth: 200,
+                        p: 2,
+                        borderRadius: 2,
+                        border: '1px solid',
+                        borderColor: 'primary.main',
+                        '&:hover': {
+                            backgroundColor: '#d4ff000c',
+                            transform: 'translateY(-2px)',
+                            boxShadow: 2
+                        },
+                        transition: 'all 0.3s ease'
+                    }}
+                >
+                    <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
                         <Phone color="primary" sx={{ fontSize: '2rem', mb: 1 }} />
-                        <Typography variant="h6">התקשר עכשיו</Typography>
-                        <Typography variant="body2" color="text.secondary">
-                            08-6566234
+                        <Typography variant="h6" sx={{ fontWeight: 'bold' }}>
+                            התקשר עכשיו
                         </Typography>
-                    </CardContent>
-                </Card>
+                        <Typography variant="body2" color="text.secondary">
+                            08-6555678
+                        </Typography>
+                    </Box>
+                </Button>
 
-                <Card sx={{ minWidth: 200 }}>
-                    <CardContent sx={{ textAlign: 'center' }}>
+                <Button
+                    component="a"
+                    href="mailto:mdimona2018@gmail.com"
+                    sx={{
+                        minWidth: 200,
+                        p: 2,
+                        borderRadius: 2,
+                        border: '1px solid',
+                        borderColor: 'primary.main',
+                        '&:hover': {
+                            backgroundColor: '#d4ff000c',
+                            transform: 'translateY(-2px)',
+                            boxShadow: 2
+                        },
+                        transition: 'all 0.3s ease'
+                    }}
+                >
+                    <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
                         <Email color="primary" sx={{ fontSize: '2rem', mb: 1 }} />
-                        <Typography variant="h6">שלח אימייל</Typography>
-                        <Typography variant="body2" color="text.secondary">
-                            info@dimona-transport.co.il
+                        <Typography variant="h6" sx={{ fontWeight: 'bold' }}>
+                            שלח אימייל
                         </Typography>
-                    </CardContent>
-                </Card>
+                        <Typography variant="body2" color="text.secondary">
+                            mdimona2018@gmail.com
+                        </Typography>
+                    </Box>
+                </Button>
             </Box>
 
             <Box sx={{ display: 'flex', gap: 2, justifyContent: 'center', flexWrap: 'wrap' }}>
@@ -51,9 +87,17 @@ const TestPage: React.FC = () => {
                     size="large"
                     component={Link}
                     to="/about"
-                    sx={{ minWidth: 150 }}
+                    sx={{
+                        minWidth: 150,
+                        '&:hover': {
+                            backgroundColor: '#FFD700',
+                            transform: 'translateY(-2px)',
+                            boxShadow: 2
+                        },
+                        transition: 'all 0.3s ease'
+                    }}
                 >
-                    אודותינו
+                    אודות
                 </Button>
                 <Button
                     variant="outlined"
@@ -68,7 +112,7 @@ const TestPage: React.FC = () => {
                     variant="contained"
                     size="large"
                     component={Link}
-                    to="/contact"
+                    to="/booking"
                     color="secondary"
                     sx={{ minWidth: 150 }}
                 >

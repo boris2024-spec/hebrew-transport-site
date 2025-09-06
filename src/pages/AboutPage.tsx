@@ -48,7 +48,7 @@ const AboutPage: React.FC = () => {
 
     const team = [
         {
-            name: 'דוד כהן',
+            name: 'רותם אוזן',
             role: 'מנהל ומייסד',
             experience: '20 שנות ניסיון בתחום התחבורה',
             avatar: 'ד',
@@ -72,8 +72,7 @@ const AboutPage: React.FC = () => {
             {/* כותרת */}
             <Box sx={{ textAlign: 'center', mb: 6 }}>
                 <Typography variant="h2" component="h1" gutterBottom>
-                    אודותינו
-                </Typography>
+                    אודות                </Typography>
                 <Typography variant="h5" color="text.secondary" paragraph>
                     המובילים בשירותי תחבורה בדימונה ובאזור הדרום
                 </Typography>
@@ -86,7 +85,7 @@ const AboutPage: React.FC = () => {
                         הסיפור שלנו
                     </Typography>
                     <Typography variant="body1" paragraph sx={{ fontSize: '1.1rem', lineHeight: 1.8 }}>
-                        דימונה תחבורה הוקמה ב-2008 על ידי דוד כהן, תושב דימונה ותיק עם חזון ברור -
+                        דימונה תחבורה הוקמה ב-2008 על ידי רותם אוזן, תושב דימונה ותיק עם חזון ברור -
                         לספק שירותי תחבורה איכותיים ואמינים לתושבי דימונה ואזור הדרום.
                         החל ממונית יחידה, החברה גדלה והתפתחה לאורך השנים לחברת תחבורה מובילה באזור.
                     </Typography>

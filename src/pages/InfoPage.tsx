@@ -100,21 +100,19 @@ const InfoPage: React.FC = () => {
         <Container maxWidth="lg" sx={{ py: 4 }}>
             {/* כותרת */}
             <Box sx={{ textAlign: 'center', mb: 6 }}>
-                <Typography variant="h2" component="h1" gutterBottom>
-                    מידע נוסף
-                </Typography>
+                <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', mb: 2 }}>
+                    <Info color="primary" sx={{ mr: 2, fontSize: '3rem' }} />
+                    <Typography variant="h2" component="h1" gutterBottom>
+                        מידע נוסף
+                    </Typography>
+                </Box>
                 <Typography variant="h5" color="text.secondary" paragraph>
                     כל מה שאתם צריכים לדעת על השירותים שלנו
                 </Typography>
             </Box>
 
             {/* התראה חשובה */}
-            <Alert severity="info" sx={{ mb: 4 }}>
-                <Typography variant="body1">
-                    <strong>הודעה חשובה:</strong> בשל הגבלות קורונה, אנא ודאו שאתם עונים על הדרישות הבריאותיות הנוכחיות.
-                    נהגינו חוסנו ומחויבים לפרוטוקולי בטיחות.
-                </Typography>
-            </Alert>
+
 
             {/* מדיניות ותנאים */}
             <Typography variant="h3" component="h2" gutterBottom sx={{ mb: 3 }}>

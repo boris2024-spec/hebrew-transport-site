@@ -30,6 +30,7 @@ import {
     Brightness7,
     WhatsApp,
     Bolt,
+    Share as ShareIcon
 } from '@mui/icons-material';
 import { Link, useLocation } from 'react-router-dom';
 import { useTheme } from '../hooks/useTheme';
@@ -53,6 +54,21 @@ const Header: React.FC = () => {
 
     const handleDrawerToggle = () => {
         setMobileOpen(!mobileOpen);
+    };
+
+    const handleShare = () => {
+        if (navigator.share) {
+            navigator.share({
+                title: 'Check this out!',
+                url: window.location.href,
+            })
+                .then(() => console.log('Successful share'))
+                .catch((error) => console.log('Error sharing', error));
+        } else {
+            // Fallback for browsers that don't support the Web Share API
+            const shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(window.location.href)}`;
+            window.open(shareUrl, '_blank');
+        }
     };
 
     const drawer = (
@@ -101,6 +117,7 @@ const Header: React.FC = () => {
                     </ListItem>
                 ))}
             </List>
+
             <Box sx={{ mt: 'auto', pt: 2 }}>
                 <ListItem
                     component="a"
@@ -125,6 +142,28 @@ const Header: React.FC = () => {
                         <WhatsApp />
                     </ListItemIcon>
                     <ListItemText primary="וואטסאפ" />
+                </ListItem>
+
+                <ListItem
+                    onClick={handleShare}
+                    sx={{
+                        borderRadius: 1,
+                        mb: 1,
+                        cursor: 'pointer',
+                        '&:hover': {
+                            backgroundColor: 'action.hover',
+                        },
+                        '&:focus-visible': {
+                            outline: '2px solid',
+                            outlineColor: 'primary.main',
+                        },
+                    }}
+                    aria-label="שתף דף זה"
+                >
+                    <ListItemIcon sx={{ color: 'white' }}>
+                        <ShareIcon />
+                    </ListItemIcon>
+                    <ListItemText primary="שתף" />
                 </ListItem>
 
                 <FormControlLabel
@@ -258,6 +297,24 @@ const Header: React.FC = () => {
                                     }}
                                 >
                                     <WhatsApp />
+                                </IconButton>
+
+                                <IconButton
+                                    onClick={handleShare}
+                                    color="inherit"
+                                    aria-label="שתף דף זה"
+                                    sx={{
+                                        '&:hover': {
+                                            backgroundColor: 'action.hover',
+                                        },
+                                        '&:focus-visible': {
+                                            outline: '2px solid',
+                                            outlineColor: 'primary.main',
+
+                                        },
+                                    }}
+                                >
+                                    <ShareIcon />
                                 </IconButton>
 
                                 <IconButton

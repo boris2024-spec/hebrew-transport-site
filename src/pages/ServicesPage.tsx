@@ -24,6 +24,7 @@ import {
     CheckCircle,
     Phone,
     School,
+    Engineering,
 } from '@mui/icons-material';
 
 const ServicesPage: React.FC = () => {
@@ -95,7 +96,7 @@ const ServicesPage: React.FC = () => {
         },
         {
             title: ' הסעות עובדים',
-            icon: <DirectionsBus fontSize="large" />,
+            icon: <Engineering fontSize="large" />,
             description: 'שירותי הסעה יומיים לעובדים ולחברות בכל רחבי הארץ',
             features: [
                 'הסעות קבועות ליום העבודה',

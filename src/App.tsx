@@ -15,8 +15,8 @@ import AboutPage from './pages/AboutPage';
 import ServicesPage from './pages/ServicesPage';
 import BookingPage from './pages/BookingPage';
 import GalleryPage from './pages/gallery';
-import InfoPage from './pages/TestPage';
-import ContactPage from './pages/TestPage';
+import InfoPage from './pages/InfoPage';
+import ContactPage from './pages/ContactPage'; // Создайте отдельный файл ContactPage
 import { Box } from '@mui/material';
 import ScrollToTop from './components/ScrollToTop';
 

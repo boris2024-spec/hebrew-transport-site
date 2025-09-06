@@ -149,7 +149,7 @@ const FooterSimple: React.FC = () => {
                                     size="small"
                                     sx={{ color: 'white' }}
                                     aria-label="עמוד הפייסבוק שלנו"
-                                    href="https://facebook.com"
+                                    href="https://www.facebook.com/profile.php?id=100064048477696&locale=ru_RU"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                 >

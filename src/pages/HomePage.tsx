@@ -16,6 +16,9 @@ import {
     Schedule,
     Security,
     Star,
+    Event,
+    School,
+    Engineering
 } from '@mui/icons-material';
 import { Link } from 'react-router-dom';
 
@@ -34,6 +37,22 @@ const services = [
         icon: <Flight fontSize="large" />,
         title: 'הסעות לנמל התעופה',
         description: 'הסעות נוחות ובטוחות לנמל התעופה בן גוריון',
+    },
+    {
+        icon: <Engineering fontSize="large" />,
+        title: ' הסעות עובדים',
+        description: 'שירותי הסעה יומיים לעובדים ולחברות בכל רחבי הארץ',
+    },
+    {
+        icon: <School fontSize="large" />,
+
+        title: ' הסעות למוסדות חינוך',
+        description: 'שירותי הסעה בטוחים ואמינים לתלמידים ולמוסדות חינוך',
+    },
+    {
+        icon: <Event fontSize="large" />,
+        title: 'אירועים מיוחדים',
+        description: 'שירותי תחבורה לחתונות, בר מצווה ואירועים מיוחדים',
     },
 ];
 
@@ -164,7 +183,7 @@ const HomePage: React.FC = () => {
                                         py: 1.5,
                                         fontSize: '1.1rem',
                                         '&:hover': {
-                                            backgroundColor: '#ffcc02', // Темный цвет при наведении
+                                            backgroundColor: '#ffcc02', // Темן цвет при наведении
                                             color: '#ffffffff',
                                             transform: 'translateY(-2px)', // Небольшой подъем
                                         },
