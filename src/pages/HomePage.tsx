@@ -96,7 +96,7 @@ const HomePage: React.FC = () => {
                                     src="/images/logo-01.png"
                                     alt="מסיעי דימונה - לוגו החברה"
                                     sx={{
-                                        width: { xs: '140%', md: '100%' },
+                                        width: { xs: '140%', md: '130%' },
                                         height: 'auto',
                                         marginTop: { xs: '-90px', md: '0' },
 

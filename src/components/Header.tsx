@@ -25,6 +25,7 @@ import {
     ContactMail as ContactIcon,
     Assignment as FormIcon,
     Business as AboutIcon,
+    PhotoLibrary as GalleryIcon,
     Brightness4,
     Brightness7,
     WhatsApp,
@@ -37,6 +38,7 @@ const menuItems = [
     { text: 'בית', icon: <HomeIcon />, path: '/' },
     { text: 'אודות', icon: <AboutIcon />, path: '/about' },
     { text: 'שירותים', icon: <ServicesIcon />, path: '/services' },
+    { text: 'גלריה', icon: <GalleryIcon />, path: '/gallery' },
     { text: 'הזמנה ', icon: <FormIcon />, path: '/booking' },
     { text: 'מידע שימושי ', icon: <InfoIcon />, path: '/info' },
     { text: 'יצירת קשר ', icon: <ContactIcon />, path: '/contact' },
@@ -55,8 +57,20 @@ const Header: React.FC = () => {
 
     const drawer = (
         <Box sx={{ width: 250, p: 2 }} role="navigation">
-            <Typography variant="h6" sx={{ mb: 2, textAlign: 'center' }}>
-                מסיעי דימונה             </Typography>
+            <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', mb: 2 }}>
+                <img
+                    src="/images/logo-01.png"
+                    alt="מסיעי דימונה לוגו"
+                    style={{
+                        height: '40px',
+                        width: 'auto',
+                        marginRight: '8px'
+                    }}
+                />
+                <Typography variant="h6" sx={{ textAlign: 'center' }}>
+                    מסיעי דימונה
+                </Typography>
+            </Box>
             <List>
                 {menuItems.map((item) => (
                     <ListItem
@@ -67,6 +81,7 @@ const Header: React.FC = () => {
                         sx={{
                             backgroundColor: location.pathname === item.path ? 'action.selected' : 'transparent',
                             borderRadius: 1,
+
                             mb: 0.5,
                             cursor: 'pointer',
                             '&:hover': {
@@ -141,10 +156,11 @@ const Header: React.FC = () => {
                     color: 'text.primary',
                     borderBottom: 1,
                     borderColor: 'divider',
+                    opacity: 0.93,
                 }}
                 role="banner"
             >
-                <Container maxWidth="lg">
+                <Container maxWidth={false} sx={{ maxWidth: '1800px', px: 2 }}>
                     <Toolbar>
                         {isMobile && (
                             <IconButton
@@ -158,15 +174,12 @@ const Header: React.FC = () => {
                             </IconButton>
                         )}
 
-                        <Typography
-                            variant="h6"
+                        <Box
                             component={Link}
                             to="/"
                             sx={{
-                                
-                                flexGrow: 1,
-                                fontSize: { xs: '1.7rem', md: '1.9rem' }, // Увеличенный размер шрифта
-                                fontWeight: 'bold',
+                                display: 'flex',
+                                alignItems: 'center',
                                 textDecoration: 'none',
                                 color: 'inherit',
                                 '&:focus-visible': {
@@ -176,11 +189,34 @@ const Header: React.FC = () => {
                                 },
                             }}
                         >
-                            מסיעי דימונה
-                        </Typography>
+                            <img
+                                src="/images/logo-01.png"
+                                alt="מסיעי דימונה לוגו"
+                                style={{
+                                    height: isMobile ? '32px' : '40px',
+                                    width: 'auto',
+                                    marginLeft: '12px'
+                                }}
+                            />
+                            <Typography
+                                variant="h6"
+                                sx={{
+                                    fontSize: { xs: '1.7rem', md: '1.9rem' },
+                                    fontWeight: 'bold',
+                                }}
+                            >
+                                מסיעי דימונה
+                            </Typography>
+                        </Box>
 
                         {!isMobile && (
-                            <Box sx={{ display: 'flex', gap: 1, alignItems: 'center' }}>
+                            <Box sx={{
+                                display: 'flex',
+                                gap: 1,
+                                alignItems: 'center',
+                                justifyContent: 'center',
+                                flexGrow: 1
+                            }}>
                                 {menuItems.map((item) => (
                                     <Button
                                         key={item.text}

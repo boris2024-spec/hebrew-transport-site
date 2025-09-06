@@ -12,6 +12,7 @@ import {
     ListItemText,
     Chip,
     Divider,
+    Link, // добавить этот импорт
 } from '@mui/material';
 import {
     DirectionsBus,
@@ -22,6 +23,7 @@ import {
     Star,
     CheckCircle,
     Phone,
+    School,
 } from '@mui/icons-material';
 
 const ServicesPage: React.FC = () => {
@@ -78,16 +80,43 @@ const ServicesPage: React.FC = () => {
             ],
             pricing: 'הצעת מחיר אישית',
         },
+        {
+            title: ' הסעות למוסדות חינוך',
+            icon: <School fontSize="large" />,
+            description: 'שירותי הסעה בטוחים ואמינים לתלמידים ולמוסדות חינוך',
+            features: [
+                'הסעות יומיות לבתי ספר',
+                'בטיחות מירבית לתלמידים',
+                'נהגים מורשים ומיומנים',
+                'רכבים מיועדים להסעת ילדים',
+                'תיאום עם לוח השעות של בית הספר',
+            ],
+            pricing: 'הצעת מחיר אישית לפי מסלול',
+        },
+        {
+            title: ' הסעות עובדים',
+            icon: <DirectionsBus fontSize="large" />,
+            description: 'שירותי הסעה יומיים לעובדים ולחברות בכל רחבי הארץ',
+            features: [
+                'הסעות קבועות ליום העבודה',
+                'מיניבוסים ואוטובוסים נוחים',
+                'נהגים מקצועיים ואמינים',
+                'תיאום עם לוחות זמנים של החברה',
+                'מחירים מועדפים לחוזים ארוכי טווח',
+            ],
+            pricing: 'הצעת מחיר אישית לפי מסלול ותדירות',
+        },
     ];
 
     const additionalServices = [
-        'הסעות לבתי חולים',
-        'נסיעות עסקיות',
-        'הסעות לבסיסים צבאיים',
-        'טיולי פנוי וטבע',
-        'הסעות לקניות',
-        'נסיעות למסדים',
+        'הסעות לבתי חולים ובתי מרפא',
+        'נסיעות ותחבורה לעסקים',
+        'הסעות לבסיסי צה״ל',
+        'טיולי פנאי, טבע ונופש',
+        'הסעות לקניונים ומרכזי קניות',
+        'נסיעות למוסדות חינוך וקהילה',
     ];
+
 
     return (
         <Container maxWidth="lg" sx={{ py: 4 }}>
@@ -136,19 +165,40 @@ const ServicesPage: React.FC = () => {
                                     ))}
                                 </List>
 
-                                <Box sx={{ mt: 2, display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                                <Box sx={{
+                                    mt: 2,
+                                    display: 'flex',
+                                    justifyContent: 'space-between',
+                                    alignItems: 'center',
+                                    '& .phone-link:hover': {
+                                        transform: 'scale(1.1)',
+                                        transition: 'transform 0.3s ease'
+                                    }
+                                }}>
                                     <Chip
                                         label={service.pricing}
                                         color="secondary"
                                         variant="outlined"
                                         sx={{ fontWeight: 'bold' }}
                                     />
-                                    <Box sx={{ display: 'flex', alignItems: 'center' }}>
+                                    <Link
+                                        href="tel:086555678"
+                                        variant="body2"
+                                        color="inherit"
+                                        underline="none"
+                                        className="phone-link"
+                                        sx={{
+                                            display: 'flex',
+                                            alignItems: 'center',
+                                            transition: 'transform 0.3s ease',
+                                            '&:hover': {
+                                                transform: 'scale(1.2)'
+                                            }
+                                        }}
+                                    >
                                         <Phone fontSize="small" sx={{ mr: 0.5 }} />
-                                        <Typography variant="body2">
-                                            08-6566234
-                                        </Typography>
-                                    </Box>
+                                        08-6555678
+                                    </Link>
                                 </Box>
                             </CardContent>
                         </Card>

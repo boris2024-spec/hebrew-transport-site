@@ -14,6 +14,7 @@ import HomePage from './pages/HomePage';
 import AboutPage from './pages/AboutPage';
 import ServicesPage from './pages/ServicesPage';
 import BookingPage from './pages/BookingPage';
+import GalleryPage from './pages/gallery';
 import InfoPage from './pages/TestPage';
 import ContactPage from './pages/TestPage';
 import { Box } from '@mui/material';
@@ -47,6 +48,7 @@ const AppContent: React.FC = () => {
                   <Route path="/" element={<HomePage />} />
                   <Route path="/about" element={<AboutPage />} />
                   <Route path="/services" element={<ServicesPage />} />
+                  <Route path="/gallery" element={<GalleryPage />} />
                   <Route path="/booking" element={<BookingPage />} />
                   <Route path="/info" element={<InfoPage />} />
                   <Route path="/contact" element={<ContactPage />} />

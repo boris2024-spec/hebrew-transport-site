@@ -30,6 +30,7 @@ const ScrollToTop = () => {
                 right: 20,
                 zIndex: 1000,
                 backgroundColor: '#ffcc00ff',
+                opacity: 0.8,
                 color: '#000000', // цвет иконки
                 '&:hover': {
                     backgroundColor: '#e6b800', // цвет при наведении
