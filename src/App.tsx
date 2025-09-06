@@ -17,6 +17,7 @@ import BookingPage from './pages/BookingPage';
 import InfoPage from './pages/TestPage';
 import ContactPage from './pages/TestPage';
 import { Box } from '@mui/material';
+import ScrollToTop from './components/ScrollToTop';
 
 // RTL cache
 const cacheRtl = createCache({
@@ -63,7 +64,10 @@ const AppContent: React.FC = () => {
 function App() {
   return (
     <ThemeProvider>
-      <AppContent />
+      <div className="App">
+        <AppContent />
+        <ScrollToTop />
+      </div>
     </ThemeProvider>
   );
 }

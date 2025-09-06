@@ -98,7 +98,7 @@ const HomePage: React.FC = () => {
                                     sx={{
                                         width: { xs: '140%', md: '100%' },
                                         height: 'auto',
-                                        marginTop: { xs: '-120px', md: '0' },
+                                        marginTop: { xs: '-90px', md: '0' },
 
                                         objectFit: 'contain',
                                         filter: 'drop-shadow(4px 4px 8px rgba(0,0,0,0.3))',
@@ -116,27 +116,14 @@ const HomePage: React.FC = () => {
                         </Grid>
                         <Grid size={{ xs: 12, md: 6 }}>
 
-                            <Typography
-                                variant="h1"
-                                component="h1"
-                                gutterBottom
-                                sx={{
-                                    textAlign: { xs: 'center', md: 'left' },
-                                    fontWeight: 700,
-                                    marginTop: { xs: '-100px', md: '0' },
-                                    fontSize: { xs: '2.5rem', md: '3.5rem' },
-                                    color: '#2c2c2c',
-                                    textShadow: '2px 2px 4px rgba(0,0,0,0.4)',
-                                }}
-                            >
-                                מסיעי דימונה
-                            </Typography>
+
                             <Typography
                                 variant="h5"
                                 component="h2"
                                 paragraph
                                 sx={{
                                     textAlign: { xs: 'center', md: 'left' },
+                                    marginTop: { xs: '-50px', md: '0' },
                                     fontWeight: 400,
                                     lineHeight: 1.6,
                                     color: '#2c2c2c',
