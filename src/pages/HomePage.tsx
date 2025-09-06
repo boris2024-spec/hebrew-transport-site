@@ -98,6 +98,7 @@ const HomePage: React.FC = () => {
                                     sx={{
                                         width: { xs: '140%', md: '100%' },
                                         height: 'auto',
+                                        marginTop: { xs: '-120px', md: '0' },
 
                                         objectFit: 'contain',
                                         filter: 'drop-shadow(4px 4px 8px rgba(0,0,0,0.3))',
@@ -122,7 +123,7 @@ const HomePage: React.FC = () => {
                                 sx={{
                                     textAlign: { xs: 'center', md: 'left' },
                                     fontWeight: 700,
-
+                                    marginTop: { xs: '-100px', md: '0' },
                                     fontSize: { xs: '2.5rem', md: '3.5rem' },
                                     color: '#2c2c2c',
                                     textShadow: '2px 2px 4px rgba(0,0,0,0.4)',

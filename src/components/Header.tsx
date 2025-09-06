@@ -28,17 +28,18 @@ import {
     Brightness4,
     Brightness7,
     WhatsApp,
+    Bolt,
 } from '@mui/icons-material';
 import { Link, useLocation } from 'react-router-dom';
 import { useTheme } from '../hooks/useTheme';
 
 const menuItems = [
     { text: 'בית', icon: <HomeIcon />, path: '/' },
-    { text: 'אודותינו', icon: <AboutIcon />, path: '/about' },
+    { text: 'אודות', icon: <AboutIcon />, path: '/about' },
     { text: 'שירותים', icon: <ServicesIcon />, path: '/services' },
-    { text: 'הזמנת נסיעה', icon: <FormIcon />, path: '/booking' },
-    { text: 'מידע נוסף', icon: <InfoIcon />, path: '/info' },
-    { text: 'צור קשר', icon: <ContactIcon />, path: '/contact' },
+    { text: 'הזמנה ', icon: <FormIcon />, path: '/booking' },
+    { text: 'מידע שימושי ', icon: <InfoIcon />, path: '/info' },
+    { text: 'יצירת קשר ', icon: <ContactIcon />, path: '/contact' },
 ];
 
 const Header: React.FC = () => {
@@ -162,7 +163,10 @@ const Header: React.FC = () => {
                             component={Link}
                             to="/"
                             sx={{
+                                
                                 flexGrow: 1,
+                                fontSize: { xs: '1.7rem', md: '1.9rem' }, // Увеличенный размер шрифта
+                                fontWeight: 'bold',
                                 textDecoration: 'none',
                                 color: 'inherit',
                                 '&:focus-visible': {
@@ -172,7 +176,7 @@ const Header: React.FC = () => {
                                 },
                             }}
                         >
-                            דימונה תחבורה
+                            מסיעי דימונה
                         </Typography>
 
                         {!isMobile && (
