@@ -18,7 +18,7 @@ import {
 const galleryImages = [
     {
         id: 1,
-        src: '/images/transport1.jpg',
+        src: '/images/bus2.png',
         title: 'אוטובוס תחבורה ציבורית',
         description: 'שירות הסעות מקצועי ואמין',
         category: 'תחבורה'
@@ -46,35 +46,35 @@ const galleryImages = [
     },
     {
         id: 5,
-        src: '/images/1.avif',
+        src: '/images/bus1.png',
         title: 'רכב הסעות מודרני',
         description: 'רכב נוח ובטוח לשירותי הסעות איכותיים',
         category: 'רכבים'
     },
     {
         id: 6,
-        src: '/images/4.avif',
+        src: '/images/bus8.png',
         title: 'מיניבוס תחבורה',
         description: 'פתרון תחבורה אידיאלי לקבוצות קטנות',
         category: 'רכבים'
     },
     {
         id: 7,
-        src: '/images/3.avif',
+        src: '/images/bus5.png',
         title: 'אוטובוס מפואר',
         description: 'שירות הסעות איכותי עם נוחות מקסימלית',
         category: 'רכבים'
     },
     {
         id: 8,
-        src: '/images/2.avif',
+        src: '/images/bus6.png',
         title: 'ציי רכבים מקצועי',
         description: 'מגוון רחב של רכבים לכל צורך תחבורתי',
         category: 'ציוד'
     },
     {
         id: 9,
-        src: '/images/5.avif',
+        src: '/images/bus4.png',
         title: 'שירות הסעות אמין',
         description: 'מחויבות למצוינות ולשירות ללא פשרות',
         category: 'שירותים'

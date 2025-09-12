@@ -182,7 +182,7 @@ const BookingPage: React.FC = () => {
                         ${formData.notes ? `<p><strong>הערות:</strong> ${formData.notes}</p>` : ''}
                     </div>
                     <div style="text-align: center; margin: 20px 0;">
-                        <p style="color: #666;">ניתן ליצור קשר עם הלקוח בטלפון: <strong>${formData.phone}</strong></p>
+                        <p style="color: #666;">ניתן ליצור קשר עם הלקוח בטלפון: <strong><a href="tel:${formData.phone}" style="color: #1976d2; text-decoration: none;">${formData.phone}</a></strong></p>
                     </div>
                 </div>
             `;
@@ -238,7 +238,7 @@ const BookingPage: React.FC = () => {
                                 </p>
                             </div>
                         `,
-                        text: `תודה על הזמנת הנסיעה! קיבלנו את פרטי ההזמנה ונחזור אליכם בהקדם. פרטי ההזמנה: ${formData.date} בשעה ${formData.time}, מ-${formData.pickupLocation} ל-${formData.destination}. לשאלות: 08-6566234`
+                        text: `תודה על הזמנת הנסיעה! קיבלנו את פרטי ההזמנה ונחזור אליכם בהקדם. פרטי ההזמנה: ${formData.date} בשעה ${formData.time}, מ-${formData.pickupLocation} ל-${formData.destination}. לשאלות: <a href="tel:08-6566234">08-6566234</a>`
                     })
                 });
             }
