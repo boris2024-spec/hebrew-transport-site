@@ -29,7 +29,7 @@ import {
     Brightness4,
     Brightness7,
     WhatsApp,
-    Bolt,
+    
     Share as ShareIcon
 } from '@mui/icons-material';
 import { Link, useLocation } from 'react-router-dom';

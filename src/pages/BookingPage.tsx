@@ -15,8 +15,7 @@ import {
     FormHelperText,
     Alert,
     Snackbar,
-    CircularProgress,
-    SelectChangeEvent,
+    CircularProgress
 } from '@mui/material';
 import {
     PersonOutline,
