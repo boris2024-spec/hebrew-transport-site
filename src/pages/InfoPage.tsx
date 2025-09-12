@@ -171,7 +171,7 @@ const InfoPage: React.FC = () => {
 
             {/* טיפים לנסיעה */}
             <Card sx={{ mb: 6, p: 4, backgroundColor: 'primary.light' }}>
-                <Typography variant="h4" component="h2" gutterBottom sx={{ color: 'primary.contrastText' }}>
+                <Typography variant="h4" component="h2" gutterBottom sx={{ color: 'primary' }}>
                     טיפים לנסיעה נעימה
                 </Typography>
                 <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1 }}>
@@ -187,6 +187,7 @@ const InfoPage: React.FC = () => {
                                     fontSize: '0.9rem',
                                     whiteSpace: 'normal',
                                     textAlign: 'center',
+                                    color: 'black',
                                 },
                             }}
                         />
