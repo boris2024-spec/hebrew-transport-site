@@ -118,7 +118,7 @@ const Header: React.FC = () => {
                 ))}
             </List>
 
-            <Box sx={{ mt: 'auto', pt: 2 }}>
+            <Box sx={{ mt: 'auto', pt: 2  }}>
                 <ListItem
                     component="a"
                     href="https://wa.me/972545927803"
@@ -196,6 +196,7 @@ const Header: React.FC = () => {
                     borderBottom: 1,
                     borderColor: 'divider',
                     opacity: 0.93,
+                    boxShadow: '0 3px 10px rgba(0,0,0,0.3)',
                 }}
                 role="banner"
             >
