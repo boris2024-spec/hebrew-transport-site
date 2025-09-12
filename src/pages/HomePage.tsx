@@ -112,15 +112,16 @@ const HomePage: React.FC = () => {
 
                                 <Box
                                     component="img"
-                                    src="/images/logo-01.png"
+                                    src="/images/busLogo2.png"
                                     alt="מסיעי דימונה - לוגו החברה"
                                     sx={{
-                                        width: { xs: '140%', md: '130%' },
+                                        width: { xs: '110%', md: '100%' },
+                                        
                                         height: 'auto',
-                                        marginTop: { xs: '-90px', md: '0' },
+                                        marginTop: { xs: '-100px', md: '0' },
 
                                         objectFit: 'contain',
-                                        filter: 'drop-shadow(4px 4px 8px rgba(0,0,0,0.3))',
+                                        filter: 'drop-shadow(4px 4px 10px rgba(0, 0, 0, 0.3))',
                                         borderRadius: 2,
                                     }}
                                 />
@@ -142,7 +143,7 @@ const HomePage: React.FC = () => {
                                 paragraph
                                 sx={{
                                     textAlign: { xs: 'center', md: 'left' },
-                                    marginTop: { xs: '-50px', md: '0' },
+                                    marginTop: { xs: '-100px', md: '0' },
                                     fontWeight: 400,
                                     lineHeight: 1.6,
                                     color: '#2c2c2c',

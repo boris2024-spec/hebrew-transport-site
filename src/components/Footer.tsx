@@ -34,7 +34,7 @@ const Footer: React.FC = () => {
                 <Grid container spacing={2}>
                     <Grid size={{ xs: 12, md: 4 }}>
                         <Typography variant="h6" gutterBottom sx={{ fontWeight: 600 }}>
-                            דימונה תחבורה
+                            דימונה מסיעי
                         </Typography>
                         <Typography variant="body2" color="text.secondary" paragraph>
                             שירותי תחבורה מקצועיים ואמינים בדימונה ובאזור הדרום.

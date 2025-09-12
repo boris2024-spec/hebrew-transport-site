@@ -29,7 +29,7 @@ import {
     Brightness4,
     Brightness7,
     WhatsApp,
-    
+
     Share as ShareIcon
 } from '@mui/icons-material';
 import { Link, useLocation } from 'react-router-dom';
@@ -75,7 +75,7 @@ const Header: React.FC = () => {
         <Box sx={{ width: 250, p: 2 }} role="navigation">
             <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', mb: 2 }}>
                 <img
-                    src="/images/logo-01.png"
+                    src="/images/busLogo2.png"
                     alt="מסיעי דימונה לוגו"
                     style={{
                         height: '40px',
@@ -229,12 +229,14 @@ const Header: React.FC = () => {
                             }}
                         >
                             <img
-                                src="/images/logo-01.png"
+                                src="/images/busLogo2.png"
                                 alt="מסיעי דימונה לוגו"
+
                                 style={{
-                                    height: isMobile ? '32px' : '40px',
+
+                                    height: isMobile ? '50px' : '55px',
                                     width: 'auto',
-                                    marginLeft: '12px'
+                                    marginLeft: '20px'
                                 }}
                             />
                             <Typography

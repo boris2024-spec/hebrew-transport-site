@@ -19,6 +19,7 @@ import InfoPage from './pages/InfoPage';
 import ContactPage from './pages/ContactPage'; // Создайте отдельный файл ContactPage
 import { Box } from '@mui/material';
 import ScrollToTop from './components/ScrollToTop';
+import ScrollToTopOnRouteChange from './components/ScrollToTopOnRouteChange';
 
 // RTL cache
 const cacheRtl = createCache({
@@ -36,6 +37,7 @@ const AppContent: React.FC = () => {
         <CssBaseline />
         <div dir="rtl">
           <Router>
+            <ScrollToTopOnRouteChange />
             <Box sx={{
               display: 'flex',
               flexDirection: 'column',
