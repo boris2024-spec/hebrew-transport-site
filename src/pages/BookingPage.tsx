@@ -27,6 +27,7 @@ import {
     GroupOutlined,
     Send,
 } from '@mui/icons-material';
+import { emailService } from '../services/emailService';
 
 interface FormData {
     fullName: string;
@@ -163,8 +164,6 @@ const BookingPage: React.FC = () => {
         setIsSubmitting(true);
 
         try {
-            const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:3001';
-
             // הכן את התוכן HTML של המייל
             const serviceTypeLabel = serviceTypes.find(type => type.value === formData.serviceType)?.label || formData.serviceType;
 
@@ -194,46 +193,30 @@ const BookingPage: React.FC = () => {
             `;
 
             // שלח מייל לבעל העסק
-            const response = await fetch(`${API_URL}/send-email`, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({
-                    to: 'boriaa85@gmail.com', // כתובת המייל שלך
-                    subject: `הזמנת נסיעה חדשה מ-${formData.fullName}`,
-                    html: emailHTML,
-                    text: `הזמנת נסיעה מ-${formData.fullName}, טלפון: ${formData.phone}, מ-${formData.pickupLocation} ל-${formData.destination} בתאריך ${formData.date} בשעה ${formData.time}`
-                })
+            await emailService.sendEmail({
+                to: 'boriaa85@gmail.com', // כתובת המייל שלך
+                subject: `הזמנת נסיעה חדשה מ-${formData.fullName}`,
+                html: emailHTML,
+                text: `הזמנת נסיעה מ-${formData.fullName}, טלפון: ${formData.phone}, מ-${formData.pickupLocation} ל-${formData.destination} בתאריך ${formData.date} בשעה ${formData.time}`
             });
-
-            if (!response.ok) {
-                const errorData = await response.json();
-                throw new Error(errorData.error || 'שגיאה בשליחת האימייל');
-            }
 
             // שלח מייל אישור ללקוח
             if (formData.email) {
-                await fetch(`${API_URL}/send-email`, {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify({
-                        to: formData.email,
-                        subject: 'אישור הזמנת נסיעה - מסיעי דימונה',
-                        html: `
-                            <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; direction: rtl;">
-                                <h2 style="color: #1976d2; text-align: center;">תודה על הזמנת הנסיעה!</h2>
-                                <div style="background: #f5f5f5; padding: 20px; border-radius: 8px; margin: 20px 0;">
-                                    <p>שלום ${formData.fullName},</p>
-                                    <p>קיבלנו את פרטי ההזמנה שלכם ונחזור אליכם בהקדם.</p>
-                                    <h3>פרטי ההזמנה:</h3>
-                                    <p><strong>תאריך:</strong> ${formData.date} בשעה ${formData.time}</p>
-                                    <p><strong>מ-${formData.pickupLocation} ל-${formData.destination}</strong></p>
-                                    <p><strong>מספר נוסעים:</strong> ${formData.passengers}</p>
-                                    <p><strong>סוג שירות:</strong> ${serviceTypeLabel}</p>
-                                </div>
+                await emailService.sendEmail({
+                    to: formData.email,
+                    subject: 'אישור הזמנת נסיעה - מסיעי דימונה',
+                    html: `
+                        <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; direction: rtl;">
+                            <h2 style="color: #1976d2; text-align: center;">תודה על הזמנת הנסיעה!</h2>
+                            <div style="background: #f5f5f5; padding: 20px; border-radius: 8px; margin: 20px 0;">
+                                <p>שלום ${formData.fullName},</p>
+                                <p>קיבלנו את פרטי ההזמנה שלכם ונחזור אליכם בהקדם.</p>
+                                <h3>פרטי ההזמנה:</h3>
+                                <p><strong>תאריך:</strong> ${formData.date} בשעה ${formData.time}</p>
+                                <p><strong>מ-${formData.pickupLocation} ל-${formData.destination}</strong></p>
+                                <p><strong>מספר נוסעים:</strong> ${formData.passengers}</p>
+                                <p><strong>סוג שירות:</strong> ${serviceTypeLabel}</p>
+                            </div>
                                 <div style="background: #e8f5e8; padding: 15px; border-radius: 8px; text-align: center;">
                                     <p><strong>לשאלות ועדכונים צרו קשר:</strong></p>
                                     <p>📞 טלפון: 08-6566234</p>
@@ -244,8 +227,7 @@ const BookingPage: React.FC = () => {
                                 </p>
                             </div>
                         `,
-                        text: `תודה על הזמנת הנסיעה! קיבלנו את פרטי ההזמנה ונחזור אליכם בהקדם. פרטי ההזמנה: ${formData.date} בשעה ${formData.time}, מ-${formData.pickupLocation} ל-${formData.destination}. לשאלות: 08-6566234`
-                    })
+                    text: `תודה על הזמנת הנסיעה! קיבלנו את פרטי ההזמנה ונחזור אליכם בהקדם. פרטי ההזמנה: ${formData.date} בשעה ${formData.time}, מ-${formData.pickupLocation} ל-${formData.destination}. לשאלות: 08-6566234`
                 });
             }
 

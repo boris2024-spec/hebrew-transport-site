@@ -9,6 +9,7 @@ import {
 } from '@mui/material';
 import { DirectionsBus, Phone, Email } from '@mui/icons-material';
 import { Link } from 'react-router-dom';
+import ApiTestComponent from '../components/ApiTestComponent';
 
 const TestPage: React.FC = () => {
     return (
@@ -128,6 +129,9 @@ const TestPage: React.FC = () => {
                     שירותי תחבורה איכותיים בדימונה ובאזור הדרום
                 </Typography>
             </Box>
+
+            {/* API Test Component */}
+            <ApiTestComponent />
         </Container>
     );
 };
